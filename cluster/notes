@@ -1,0 +1,5 @@
+A cluster in Node.js is a group of worker processes that can share the same server port and handle incoming requests. When you create a cluster, the master process spawns a number of worker processes that run concurrently and distribute the workload among them.
+
+The master process is responsible for managing the worker processes and distributing incoming connections to them. Each worker process is a copy of the original Node.js process, with its own event loop and memory space.
+
+In simpler terms, a Node.js cluster allows you to use multiple CPU cores to handle incoming requests, which can significantly improve the performance of your application. The cluster module provides a simple API for creating and managing worker processes, so you don't have to worry about the details of inter-process communication.
