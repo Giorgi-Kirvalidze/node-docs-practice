@@ -1,3 +1,5 @@
+// The default value for the maximum number of listeners in EventEmitter is 10.
+
 const EventEmitter = require('events');
 const express = require('express');
 const bodyParser = require('body-parser');
