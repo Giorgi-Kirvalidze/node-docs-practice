@@ -24,7 +24,13 @@ app.get('/server-stats', (req, res) => {
       const totalmem = os.totalmem();
       const freemem = os.freemem();
       const disk = os.freemem();
-  
+      const hostname= os.hostname();
+      const type= os.type();
+      const platform= os.platform();
+      const release= os.release();
+      const uptime= os.uptime();
+      const  cpus= os.cpus();
+      const networkInterfaces= os.networkInterfaces(),
       return { name, host, loadavg, totalmem, freemem, disk };
     });
   
