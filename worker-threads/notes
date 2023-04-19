@@ -48,3 +48,6 @@ The child_process module provides a way to spawn child processes from within a N
 Worker threads are a relatively new addition to Node.js and provide a way to run JavaScript code in parallel, without blocking the main event loop. Worker threads are similar to child processes in that they are spawned as separate threads and have their own V8 instances. However, they are designed to be used for CPU-intensive tasks and provide a more lightweight alternative to using child processes.
 
 In general, the choice between using cluster child processes, the child_process module, or worker threads depends on the specific requirements of your application. If your application needs to take advantage of multiple cores and provide automatic load balancing, then the cluster module is a good choice. If you need more control over the child process, then the child_process module may be a better option. If your application needs to perform CPU-intensive tasks and you want to avoid blocking the main event loop, then worker threads may be the best choice.
+
+
+Resizing and compressing images can be CPU-intensive tasks, especially when dealing with a large number of images. In such cases, using worker threads can help to improve the performance and responsiveness of your application.
