@@ -30,7 +30,7 @@ app.get('/server-stats', (req, res) => {
       const release= os.release();
       const uptime= os.uptime();
       const  cpus= os.cpus();
-      const networkInterfaces= os.networkInterfaces(),
+      const networkInterfaces= os.networkInterfaces();
       return { name, host, loadavg, totalmem, freemem, disk };
     });
   
