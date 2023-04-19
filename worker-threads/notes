@@ -1,0 +1,50 @@
+Worker threads is a built-in module in Node.js that allows developers to run JavaScript code on multiple threads in parallel. It provides a way to execute CPU-intensive tasks in the background without blocking the main thread of execution.
+
+Here are some details that senior Node.js developers should know about the worker threads module:
+
+Worker threads are designed for CPU-intensive tasks: The worker threads module is not intended for I/O-bound tasks like network requests or disk I/O. Instead, it is optimized for CPU-bound tasks like image processing, data compression, or encryption.
+
+Workers share memory with the main thread: Worker threads have access to the same global scope and shared memory space as the main thread. This allows them to share data and communicate with each other using JavaScript objects.
+
+Workers use message passing to communicate: Communication between the main thread and worker threads is done through message passing. The main thread can send messages to a worker using the worker.postMessage() method, and the worker can send messages back to the main thread using the parentPort.postMessage() method.
+
+Workers can be created and managed using the Worker class: The Worker class is used to create and manage worker threads in Node.js. To create a new worker, you need to pass a path to a JavaScript file that contains the code you want to run on the worker thread.
+
+Workers can be reused: Once a worker has completed its task, it can be reused to run another task. This can help improve performance by avoiding the overhead of creating and destroying worker threads.
+
+
+#### it is same thing and forking child processes from cluster module ?
+
+No, it is not the same thing as forking child processes from the cluster module. The worker threads module provides a way to create and manage multiple threads within a single Node.js process, whereas the cluster module allows for the creation of multiple processes to distribute the load of incoming requests.
+
+The worker threads module allows for more fine-grained control over the creation and management of threads, which can be useful in situations where there is a need for parallel processing of CPU-intensive tasks, such as image or video processing. Unlike child processes created using the child_process module, worker threads share memory with the parent process, which can result in better performance and reduced overhead.
+
+On the other hand, the cluster module creates multiple instances of the entire Node.js process, each of which can handle incoming requests. This approach is useful when there is a need to distribute the load of incoming requests across multiple CPU cores or machines. The cluster module is commonly used in production environments to improve the scalability and availability of Node.js applications.
+
+In summary, the worker threads module provides a way to create and manage multiple threads within a single Node.js process, whereas the cluster module allows for the creation of multiple processes to distribute the load of incoming requests.
+
+
+
+
+#### is it same as child process module, i am confused which one to use when, cpu intesive task can be generating pdf file, should i use cluster child processes, child processed module or worker threads
+
+The worker threads module is similar to the child process module in that it allows for the creation of separate threads or processes to perform tasks in parallel, but there are some differences.
+
+The main difference is that worker threads are designed for CPU-intensive tasks that can be parallelized, whereas the child process module is more general-purpose and can be used to spawn any kind of process or executable. Additionally, worker threads are lightweight and share memory with the parent thread, which can be more efficient than creating separate child processes.
+
+In the case of generating a PDF file, it depends on the specific requirements and constraints of the application. If the PDF generation process can be parallelized and is CPU-intensive, then using worker threads could be a good choice. However, if the PDF generation requires running an external command or executable, or involves interacting with other processes or systems, then using the child process module might be a better option.
+
+Cluster module can also be useful in some cases, but it is typically used for scaling out the application across multiple processes on different CPUs or machines. If the application is running on a single machine with multiple cores, worker threads can provide similar benefits without the added complexity of managing multiple processes.
+
+In summary, the choice between worker threads, child processes, and cluster module depends on the specific requirements and constraints of the application, and each has its own strengths and weaknesses.
+
+#### Summary
+When using child processes, they are spawned as separate processes and do not share the main thread. Each child process has its own V8 instance and runs in a separate memory space. The parent process and child processes communicate with each other through IPC (Inter-Process Communication) mechanisms provided by Node.js.
+
+The cluster module also spawns child processes, but they are all running the same code and share the same memory space. The cluster module is specifically designed to take advantage of multi-core systems, allowing multiple worker processes to handle incoming requests.
+
+The child_process module provides a way to spawn child processes from within a Node.js application. It provides more control over the child process than the cluster module, but does not provide any automatic load balancing or failover capabilities.
+
+Worker threads are a relatively new addition to Node.js and provide a way to run JavaScript code in parallel, without blocking the main event loop. Worker threads are similar to child processes in that they are spawned as separate threads and have their own V8 instances. However, they are designed to be used for CPU-intensive tasks and provide a more lightweight alternative to using child processes.
+
+In general, the choice between using cluster child processes, the child_process module, or worker threads depends on the specific requirements of your application. If your application needs to take advantage of multiple cores and provide automatic load balancing, then the cluster module is a good choice. If you need more control over the child process, then the child_process module may be a better option. If your application needs to perform CPU-intensive tasks and you want to avoid blocking the main event loop, then worker threads may be the best choice.
