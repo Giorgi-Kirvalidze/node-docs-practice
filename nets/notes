@@ -1,0 +1,6 @@
+In Node.js, the net module is a built-in module that provides a way to create TCP servers and clients. It is used to establish low-level network connections, which allows for bi-directional communication between a server and a client over a network.
+
+The net module provides two primary classes: net.Server and net.Socket. net.Server is used to create a TCP server that listens for incoming connections, and net.Socket is used to create a TCP client that can connect to a server.
+
+TLS encryption
+The net module also provides support for TLS encryption through the tls module. You can create a secure TCP server by passing a TLS options object to the tls.createServer() method, and you can create a secure TCP client by passing a TLS options object to the tls.connect() method.
