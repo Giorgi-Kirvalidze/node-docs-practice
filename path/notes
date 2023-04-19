@@ -1,0 +1,10 @@
+// The path module is a built-in module in Node.js and doesn't need to be installed separately.
+// The path module provides utilities for working with file and directory paths. It's particularly useful for creating cross-platform compatible file paths as it handles differences in path conventions between operating systems (e.g. backslashes on Windows vs forward slashes on Unix-like systems).
+// The path module provides several functions for manipulating paths, including path.join(), path.resolve(), and path.basename().
+// The path.join() function is used to join path segments together, creating a path string that is valid for the current operating system. For example, path.join('/foo', 'bar', 'baz') would return '/foo/bar/baz'.
+// The path.resolve() function is used to resolve a sequence of paths or path segments into an absolute path. For example, path.resolve('/foo/bar', './baz') would return '/foo/bar/baz'.
+// The path.basename() function is used to get the last portion of a path. For example, path.basename('/foo/bar/baz.txt') would return 'baz.txt'.
+// The path.extname() function is used to get the file extension of a path. For example, path.extname('/foo/bar/baz.txt') would return '.txt'.
+// The path.parse() function is used to parse a path into an object containing the root, dir, base, name, and ext properties. For example, path.parse('/foo/bar/baz.txt') would return { root: '/', dir: '/foo/bar', base: 'baz.txt', ext: '.txt', name: 'baz' }.
+// The path.normalize() function is used to normalize a path by resolving '..' and '.' segments. For example, path.normalize('/foo/bar/../baz') would return '/foo/baz'.
+// The path.delimiter property is a platform-specific delimiter used to separate multiple paths in an environment variable (e.g. the PATH variable on Unix-like systems). On Unix-like systems, the delimiter is ':'. On Windows, the delimiter is ';'.
