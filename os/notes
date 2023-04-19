@@ -1,0 +1,8 @@
+The os (Operating System) module in Node.js provides a way to interact with the underlying operating system in a platform-independent way. It allows you to retrieve information about the operating system, such as the CPU architecture, memory usage, network interfaces, etc. Here are some key features of the os module:
+
+Retrieving system information: The os module provides a number of functions to retrieve system information, such as os.platform(), os.arch(), os.totalmem(), os.cpus(), os.networkInterfaces(), and more.
+
+Interacting with the file system: The os module provides a way to interact with the file system in a platform-independent way, using functions such as os.tmpdir(), os.homedir(), and os.hostname().
+
+Interacting with the environment: The os module provides a way to interact with the environment variables, using functions such as os.environ().
+

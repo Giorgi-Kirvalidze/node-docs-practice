@@ -28,3 +28,39 @@ Realistic scenarios: When testing your application, it's important to simulate r
 Cloud-based testing: Another option is to use cloud-based testing services such as BlazeMeter or LoadImpact, which allow you to simulate high traffic from multiple locations around the world and generate detailed reports on how your application performed.
 
 Regardless of the approach you choose, it's important to carefully monitor key performance metrics such as response times, error rates, and CPU usage during load testing to identify bottlenecks and ensure that your application can handle high traffic.
+#### what is diff between http, http2, and https
+HTTP (Hypertext Transfer Protocol), HTTP/2, and HTTPS (HTTP Secure) are all protocols for transferring data over the internet, but they differ in their features and how they secure the data being transferred.
+
+HTTP is the original protocol used for transferring data over the internet. It is a stateless protocol, which means that each request and response is independent of any previous requests or responses. It uses a plain text format to transfer data, which makes it vulnerable to eavesdropping and tampering.
+
+HTTP/2 is the next generation of HTTP and is designed to address some of the limitations of HTTP. It uses a binary format to transfer data, which is more efficient than the text-based format used by HTTP. It also introduces several new features, such as server push, which allows the server to send multiple resources to the client without the client having to request them individually.
+
+HTTPS is a secure version of HTTP that uses SSL/TLS (Secure Sockets Layer/Transport Layer Security) to encrypt the data being transferred. It provides end-to-end encryption between the client and server, which means that the data cannot be read or tampered with by third parties. HTTPS is widely used for transferring sensitive information, such as passwords, credit card numbers, and other personal data.
+
+Here are some key differences between HTTP, HTTP/2, and HTTPS:
+
+Data format: HTTP uses a plain text format, while HTTP/2 uses a binary format. HTTPS uses the same format as HTTP, but the data is encrypted.
+
+Performance: HTTP/2 is designed to be faster than HTTP because it allows multiple requests and responses to be sent over a single connection. HTTPS can be slower than HTTP because the encryption and decryption process can add overhead.
+
+Security: HTTPS provides end-to-end encryption, which makes it more secure than HTTP and HTTP/2. HTTP and HTTP/2 are vulnerable to eavesdropping and tampering.
+
+Port: HTTP and HTTP/2 use port 80 by default, while HTTPS uses port 443.
+#### what is rest api, graphql and diff
+REST (Representational State Transfer) API and GraphQL are both ways of designing and exposing APIs (Application Programming Interfaces) to clients for accessing server-side data and functionality.
+
+REST API is a standard set of rules and constraints for creating web services, which are used to build web-based applications. It typically uses HTTP requests to access and manipulate resources on a server, where each resource is identified by a unique URL. RESTful APIs use a limited set of well-defined HTTP verbs (GET, POST, PUT, DELETE, etc.) to interact with these resources in a stateless manner, meaning that each request contains all the information necessary for the server to complete the request.
+
+GraphQL is a query language for APIs, developed by Facebook. It is a more flexible and powerful alternative to REST APIs, allowing clients to specify exactly what data they need from the server and in what format. With GraphQL, the client sends a query to the server that describes the data it needs, and the server returns only the requested data in a JSON object. This can lead to more efficient data transfer, as the client only receives the data it needs, and can also simplify the client-side code, as it can reduce the need for multiple requests and data manipulation.
+
+Some key differences between REST API and GraphQL are:
+
+Data fetching: In REST API, each endpoint usually represents a specific resource and returns all the data related to that resource, while in GraphQL, the client specifies exactly what data it needs and in what format.
+
+Data manipulation: REST API uses HTTP verbs (GET, POST, PUT, DELETE) to manipulate resources, while GraphQL uses a single endpoint to perform all operations, using a query language to specify what operations to perform.
+
+Caching: REST API relies on HTTP caching to improve performance, while in GraphQL, caching is often done at the query level, as the client can specify the exact data it needs, reducing the amount of data that needs to be cached.
+
+Learning curve: REST API is easier to understand and implement for developers who are new to API design, while GraphQL requires a deeper understanding of the query language and its capabilities.
+
+In summary, both REST API and GraphQL have their own advantages and disadvantages, and the choice of which to use depends on the specific needs and requirements of the project. REST API is well-suited for simple, resource-based APIs, while GraphQL is more flexible and powerful for more complex data-fetching scenarios.
