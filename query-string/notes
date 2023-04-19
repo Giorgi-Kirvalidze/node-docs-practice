@@ -1,0 +1,8 @@
+The querystring module in Node.js provides a way to serialize JavaScript objects into query strings and to deserialize query strings into JavaScript objects. It can be used to handle HTTP requests and responses, particularly when working with APIs that receive or send data in query string format.
+
+Some of the methods available in the querystring module include:
+
+querystring.parse(str, sep, eq, options) - parses a query string into a JavaScript object. The sep parameter specifies the separator used between key/value pairs (default is '&'), and the eq parameter specifies the separator used between keys and values (default is '='). The options parameter can be used to specify additional options for parsing, such as the maximum number of keys to parse (maxKeys).
+querystring.stringify(obj, sep, eq, options) - serializes a JavaScript object into a query string. The sep and eq parameters have the same meaning as in querystring.parse(). The options parameter can be used to specify additional options for serialization, such as whether to URL encode the keys and values (encodeURIComponent).
+querystring.escape(str) - URL encodes a string. This method is used by querystring.stringify() to encode keys and values by default.
+querystring.unescape(str) - URL decodes a string.
